@@ -155,6 +155,13 @@ class UpcomingTripsSection extends StatelessWidget {
                           width: 48,
                           height: 48,
                           fit: BoxFit.cover,
+                          errorBuilder: (context, error, stackTrace) =>
+                              Image.asset(
+                            'assets/default-avatar.jpg',
+                            width: 48,
+                            height: 48,
+                            fit: BoxFit.cover,
+                          ),
                         ),
                       ),
                       const SizedBox(height: 8),

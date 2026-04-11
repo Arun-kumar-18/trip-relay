@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:trip_relay/trip/widgets/page_transitions_builder_widget.dart';
 import 'package:trip_relay/utils/navigation.dart';
 
 void main() {
-  runApp(const TripRelay());
+  runApp(const ProviderScope(child: TripRelay()));
 }
 
 class TripRelay extends StatelessWidget {

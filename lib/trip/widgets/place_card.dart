@@ -31,7 +31,14 @@ class PlaceCard extends StatelessWidget {
             child: Stack(
               children: [
                 Positioned.fill(
-                  child: Image.network(imageUrl, fit: BoxFit.cover),
+                  child: Image.network(
+                    imageUrl,
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) => Image.asset(
+                      'assets/tr.webp',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
                 ),
                 Positioned(
                   top: 8,

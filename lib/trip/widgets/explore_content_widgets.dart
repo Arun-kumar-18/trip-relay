@@ -219,6 +219,10 @@ class MapPreviewSection extends StatelessWidget {
               Image.network(
                 imageUrl,
                 fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) => Image.asset(
+                  'assets/tr.webp',
+                  fit: BoxFit.cover,
+                ),
               ),
               ColoredBox(color: Colors.black.withOpacity(0.15)),
               Center(

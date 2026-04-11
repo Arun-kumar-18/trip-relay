@@ -38,7 +38,14 @@ class StayCard extends StatelessWidget {
           SizedBox(
             height: 150,
             width: double.infinity,
-            child: Image.network(imageUrl, fit: BoxFit.cover),
+            child: Image.network(
+              imageUrl,
+              fit: BoxFit.cover,
+              errorBuilder: (context, error, stackTrace) => Image.asset(
+                'assets/tr.webp',
+                fit: BoxFit.cover,
+              ),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.all(12),
@@ -73,7 +80,7 @@ class StayCard extends StatelessWidget {
                     ),
                     const SizedBox(width: 12),
                     Text(
-                      price,
+                      " price",
                       style: const TextStyle(
                         color: Color(0xFFEC5B13),
                         fontWeight: FontWeight.w800,
@@ -81,7 +88,6 @@ class StayCard extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 10),
                 Row(
                   children: [
                     Icon(amenityOneIcon,
